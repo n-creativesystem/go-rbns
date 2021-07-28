@@ -3,10 +3,9 @@ package fwncs
 import (
 	"net/http"
 
-	rbns "github.com/n-creativesystem/sdk-go-rbns"
-	"github.com/n-creativesystem/sdk-go-rbns/middleware"
-
 	"github.com/n-creativesystem/go-fwncs"
+	rbns "github.com/n-creativesystem/go-rbns"
+	"github.com/n-creativesystem/go-rbns/middleware"
 )
 
 type GetUserOrganization func(c fwncs.Context) (userKey string, organizationName string, err error)

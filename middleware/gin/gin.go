@@ -4,10 +4,9 @@ import (
 	"errors"
 	"net/http"
 
-	rbns "github.com/n-creativesystem/sdk-go-rbns"
-	"github.com/n-creativesystem/sdk-go-rbns/middleware"
-
 	"github.com/gin-gonic/gin"
+	rbns "github.com/n-creativesystem/go-rbns"
+	"github.com/n-creativesystem/go-rbns/middleware"
 )
 
 var (

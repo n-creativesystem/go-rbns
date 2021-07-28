@@ -3,9 +3,8 @@ package gin
 import (
 	"net/http"
 
-	rbns "github.com/n-creativesystem/sdk-go-rbns"
-
 	"github.com/gin-gonic/gin"
+	rbns "github.com/n-creativesystem/go-rbns"
 )
 
 func clientWithOptions(c *gin.Context, opts ...rbns.Option) bool {

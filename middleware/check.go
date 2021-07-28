@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	rbns "github.com/n-creativesystem/sdk-go-rbns"
+	rbns "github.com/n-creativesystem/go-rbns"
 )
 
 var (

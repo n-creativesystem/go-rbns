@@ -3,7 +3,7 @@ package rbns
 import (
 	"context"
 
-	"github.com/n-creativesystem/sdk-go-rbns/proto"
+	"github.com/n-creativesystem/go-rbns/proto"
 
 	"google.golang.org/grpc"
 )

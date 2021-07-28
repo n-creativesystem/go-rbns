@@ -1,4 +1,4 @@
-module github.com/n-creativesystem/sdk-go-rbns
+module github.com/n-creativesystem/go-rbns
 
 go 1.16
 

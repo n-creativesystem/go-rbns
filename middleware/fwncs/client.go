@@ -3,9 +3,8 @@ package fwncs
 import (
 	"net/http"
 
-	rbns "github.com/n-creativesystem/sdk-go-rbns"
-
 	"github.com/n-creativesystem/go-fwncs"
+	rbns "github.com/n-creativesystem/go-rbns"
 )
 
 func clientWithOptions(c fwncs.Context, opts ...rbns.Option) bool {
