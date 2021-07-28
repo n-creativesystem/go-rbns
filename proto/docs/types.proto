@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+option go_package = "github.com/n-creativesystem/api-rbac/proto";
+
+message permissionEntity {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message permissionKey {
+    string id = 1;
+}
+
+message permissionEntities {
+    repeated permissionEntity permissions = 1;
+}
+
+message permissionCheckRequest {
+    string userKey = 1;
+    string organizationName = 2;
+    repeated string permissionNames = 3;
+}
+
+message permissionCheckResult {
+    bool result = 1;
+    string message = 2;
+}
+
+message roleEntity {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    repeated permissionEntity permissions = 4;
+    repeated organizationUser organizationUsers = 5;
+}
+
+message roleUpdateEntity {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message roleKey {
+    string id = 1;
+}
+
+message roleEntities {
+    repeated roleEntity roles = 1;
+}
+
+message roleReleationPermissions {
+    string id = 1;
+    repeated permissionKey permissions = 2;
+}
+
+message organizationEntity {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    repeated userEntity users = 4;
+}
+
+message organizationUpdateEntity {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message organizationEntities {
+    repeated organizationEntity organizations = 1;
+}
+
+message organizationKey {
+    string id = 1;
+}
+
+message userEntity {
+    string key = 1;
+    string organization_id = 2;
+    repeated roleEntity roles = 3;
+    repeated permissionEntity permissions = 4;
+}
+
+message userKey {
+    string key = 1;
+    string organization_id = 2;
+}
+
+message organizationUser {
+    string user_key = 1;
+    string organization_id = 2;
+    string organization_name = 3;
+    string organization_description = 4;
+}
+
+message userRole {
+    userKey user = 1;
+    repeated roleKey roles = 2;
+}
+
+message empty {}

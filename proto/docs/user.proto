@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+import "types.proto";
+
+option go_package = "github.com/n-creativesystem/api-rbac/proto";
+
+service User {
+    // Create is create user
+    rpc Create (userEntity) returns (empty);
+    // Delete is delete user
+    rpc Delete (userKey) returns (empty);
+    // FindByKey is find organization id and user key
+    rpc FindByKey (userKey) returns (userEntity);
+    // AddRole is add role to user  
+    rpc AddRole (userRole) returns (empty);
+    // DeleteRole is add role to user  
+    rpc DeleteRole (userRole) returns (empty);
+}

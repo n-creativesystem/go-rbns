@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+import "types.proto";
+
+option go_package = "github.com/n-creativesystem/api-rbac/proto";
+
+service Organization {
+    // Create is create orgnization
+    rpc Create (organizationEntity) returns (organizationEntity);
+    // FindById is application id and organization id
+    rpc FindById (organizationKey) returns (organizationEntity);
+    // FindAll is application is return organizations
+    rpc FindAll (empty) returns (organizationEntities);
+    // Update is organization entity update
+    rpc Update (organizationUpdateEntity) returns (empty);
+    // Delete is organization entity delete
+    rpc Delete (organizationKey) returns (empty);
+}

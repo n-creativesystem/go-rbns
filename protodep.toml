@@ -1,0 +1,5 @@
+proto_outdir = "./proto/docs"
+
+[[dependencies]]
+	target = "github.com/n-creativesystem/rbns/proto/docs"
+	branch = "master"

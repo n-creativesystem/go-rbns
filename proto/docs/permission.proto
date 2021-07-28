@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+import "types.proto";
+
+option go_package = "github.com/n-creativesystem/api-rbac/proto";
+
+service Permission {
+    // Create is create permission
+    rpc Create (permissionEntities) returns (permissionEntities);
+    // FindById is find by id
+    rpc FindById (permissionKey) returns (permissionEntity);
+    // FindAll is find by application id return permissions
+    rpc FindAll (empty) returns (permissionEntities);
+    // Update is permission entity update
+    rpc Update (permissionEntity) returns (empty);
+    // Delete is permission entity delete
+    rpc Delete (permissionKey) returns (empty);
+    // Check is resource check
+    rpc Check (permissionCheckRequest) returns (permissionCheckResult);
+}

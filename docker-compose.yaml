@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  go-rbac-sdk-dev:
+    build: .devcontainer
+    tty: true
+    container_name: go-rbac-sdk-dev
+    volumes:
+      - .:/src/:delegated
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+    environment:
+      TZ: Asia/Tokyo
+    networks:
+      - rbns-net
+networks:
+  default:
+    name: bridge
+  rbns-net:
+    name: rbns-net
+    driver: bridge

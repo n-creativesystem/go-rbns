@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+import "types.proto";
+
+option go_package = "github.com/n-creativesystem/api-rbac/proto";
+
+service Role {
+    // RoleCreate is create role
+    rpc Create (roleEntities) returns (roleEntities);
+    // FindById is find by id
+    rpc FindById (roleKey) returns (roleEntity);
+    // FindAll is find roles
+    rpc FindAll (empty) returns (roleEntities);
+    // Update is role entity update
+    rpc Update (roleUpdateEntity) returns (empty);
+    // Delete is role entity delete
+    rpc Delete (roleKey) returns (empty);
+    // GetPermissions is get permission to the role
+    rpc GetPermissions (roleKey) returns (permissionEntities);
+    // AddPermissions is add permission to the role
+    rpc AddPermissions (roleReleationPermissions) returns (empty);
+    // DeletePermission is delete permission to the role
+    rpc DeletePermission (roleReleationPermissions) returns (empty);
+}

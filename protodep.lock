@@ -1,0 +1,8 @@
+proto_outdir = "./proto/docs"
+
+[[dependencies]]
+  target = "github.com/n-creativesystem/rbns/proto/docs"
+  revision = "faa791d40ecd87ee2a6a87d5fdf4fb1fea2924f9"
+  branch = "master"
+  path = ""
+  protocol = ""
