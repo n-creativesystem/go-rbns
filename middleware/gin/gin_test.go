@@ -6,9 +6,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/n-creativesystem/go-rbns-sdk"
-	rbnsGin "github.com/n-creativesystem/go-rbns-sdk/middleware/gin"
-	"github.com/n-creativesystem/go-rbns-sdk/tests"
+	rbns "github.com/n-creativesystem/sdk-go-rbns"
+	rbnsGin "github.com/n-creativesystem/sdk-go-rbns/middleware/gin"
+	"github.com/n-creativesystem/sdk-go-rbns/tests"
 
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"

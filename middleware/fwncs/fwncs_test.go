@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/n-creativesystem/go-rbns-sdk"
-	rbnsFwncs "github.com/n-creativesystem/go-rbns-sdk/middleware/fwncs"
-	"github.com/n-creativesystem/go-rbns-sdk/tests"
+	rbns "github.com/n-creativesystem/sdk-go-rbns"
+	rbnsFwncs "github.com/n-creativesystem/sdk-go-rbns/middleware/fwncs"
+	"github.com/n-creativesystem/sdk-go-rbns/tests"
 
 	"github.com/n-creativesystem/go-fwncs"
 	"github.com/stretchr/testify/assert"

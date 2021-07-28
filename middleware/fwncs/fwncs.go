@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/n-creativesystem/go-rbns-sdk"
-	"github.com/n-creativesystem/go-rbns-sdk/middleware"
+	"github.com/n-creativesystem/sdk-go-rbns/middleware"
 
 	"github.com/n-creativesystem/go-fwncs"
 )

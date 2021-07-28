@@ -3,7 +3,7 @@ package gin
 import (
 	"net/http"
 
-	"github.com/n-creativesystem/go-rbns-sdk"
+	rbns "github.com/n-creativesystem/sdk-go-rbns"
 
 	"github.com/gin-gonic/gin"
 )
