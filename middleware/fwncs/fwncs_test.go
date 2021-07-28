@@ -2,13 +2,14 @@ package fwncs_test
 
 import (
 	"fmt"
-	"n-creativesystem/go-rbns-sdk"
-	rbnsFwncs "n-creativesystem/go-rbns-sdk/middleware/fwncs"
-	"n-creativesystem/go-rbns-sdk/tests"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
+	rbnsFwncs "github.com/n-creativesystem/go-rbns-sdk/middleware/fwncs"
+	"github.com/n-creativesystem/go-rbns-sdk/tests"
 
 	"github.com/n-creativesystem/go-fwncs"
 	"github.com/stretchr/testify/assert"

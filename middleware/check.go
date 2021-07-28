@@ -2,8 +2,9 @@ package middleware
 
 import (
 	"errors"
-	"n-creativesystem/go-rbns-sdk"
 	"net/http"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
 )
 
 var (

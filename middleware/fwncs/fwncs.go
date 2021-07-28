@@ -1,9 +1,10 @@
 package fwncs
 
 import (
-	"n-creativesystem/go-rbns-sdk"
-	"n-creativesystem/go-rbns-sdk/middleware"
 	"net/http"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
+	"github.com/n-creativesystem/go-rbns-sdk/middleware"
 
 	"github.com/n-creativesystem/go-fwncs"
 )

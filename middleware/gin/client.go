@@ -1,8 +1,9 @@
 package gin
 
 import (
-	"n-creativesystem/go-rbns-sdk"
 	"net/http"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,8 +1,9 @@
 package fwncs
 
 import (
-	"n-creativesystem/go-rbns-sdk"
 	"net/http"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
 
 	"github.com/n-creativesystem/go-fwncs"
 )

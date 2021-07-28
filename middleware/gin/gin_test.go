@@ -2,12 +2,13 @@ package gin_test
 
 import (
 	"fmt"
-	"n-creativesystem/go-rbns-sdk"
-	rbnsGin "n-creativesystem/go-rbns-sdk/middleware/gin"
-	"n-creativesystem/go-rbns-sdk/tests"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/n-creativesystem/go-rbns-sdk"
+	rbnsGin "github.com/n-creativesystem/go-rbns-sdk/middleware/gin"
+	"github.com/n-creativesystem/go-rbns-sdk/tests"
 
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
