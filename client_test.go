@@ -6,12 +6,15 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"google.golang.org/grpc"
 )
 
 func TestClientCheck(t *testing.T) {
 	ctx := context.Background()
-	client, _ := Connection(ctx, WithHost(fmt.Sprintf("%s:%d", "api-rbac-dev", 8888)), WithApiKey("5d78ced0-c6a0-471d-90f3-a0ec7653172e"))
-	r, err := client.Check("user1", "default", "create:test")
-	assert.NoError(t, err)
-	assert.True(t, r)
+	client, err := Connection(ctx, WithHost(fmt.Sprintf("%s:%d", "notification-management-envoy", 10000)), WithDialOption(grpc.WithInsecure()))
+	if assert.NoError(t, err) {
+		r, err := client.Check("user1", "default", "create:test")
+		assert.NoError(t, err)
+		assert.True(t, r)
+	}
 }

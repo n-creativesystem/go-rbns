@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"google.golang.org/grpc"
+	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/metadata"
 )
 
@@ -13,10 +14,8 @@ const (
 )
 
 var defaultConfig = &config{
-	dialOptions: []grpc.DialOption{
-		grpc.WithInsecure(),
-	},
-	host: "localhost:6565",
+	dialOptions: []grpc.DialOption{},
+	host:        "localhost:6565",
 }
 
 type config struct {
@@ -27,9 +26,9 @@ type config struct {
 
 type Option func(conf *config)
 
-func WithDialOption(opt grpc.DialOption) Option {
+func WithDialOption(opt ...grpc.DialOption) Option {
 	return func(conf *config) {
-		conf.dialOptions = append(conf.dialOptions, opt)
+		conf.dialOptions = append(conf.dialOptions, opt...)
 	}
 }
 
@@ -79,6 +78,15 @@ func Connection(ctx context.Context, opts ...Option) (*Client, error) {
 	con, err := grpc.DialContext(ctx, conf.host, conf.dialOptions...)
 	if err != nil {
 		return nil, err
+	}
+	resp, err := healthpb.NewHealthClient(con).Check(ctx, &healthpb.HealthCheckRequest{
+		Service: "",
+	})
+	if err != nil {
+		return nil, fmt.Errorf("Status RPC failure: %s", err.Error())
+	}
+	if resp.GetStatus() != healthpb.HealthCheckResponse_SERVING {
+		return nil, fmt.Errorf("Status unhealthy: %s", resp.GetStatus().String())
 	}
 	return &Client{
 		con:  con,
